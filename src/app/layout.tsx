@@ -1,4 +1,4 @@
-import { Header } from '@/containers/Header';
+import { SessionProvider } from '@/hooks/session';
 import { GlobalStyle } from '@/styles/global';
 import { Inter } from '@next/font/google';
 
@@ -20,12 +20,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
         <head />
-        <body className={inter.className}>
-          <Header />
-          {children}
-        </body>
+        <SessionProvider>
+          <body className={inter.className}>{children}</body>
+        </SessionProvider>
+        <GlobalStyle />
       </html>
-      <GlobalStyle />
     </>
   );
 }
