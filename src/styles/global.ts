@@ -24,4 +24,10 @@ body {
   background: var(--background);
 }
 
+input, button, textarea {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 `;
